@@ -1,0 +1,57 @@
+URxvt*scrollBar:       false
+URxvt*font:            xft:FuraCode Nerd Font:pixelsize=20
+
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+
+URxvt.keysym.C-M-c:    builtin-string:
+URxvt.keysym.C-M-v:    builtin-string:
+
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+
+#define base00 #333333
+#define base01 #393939
+#define base02 #515151
+#define base03 #747369
+#define base04 #a09f93
+#define base05 #d3d0c8
+#define base06 #e8e6df
+#define base07 #f2f0ec
+#define base08 #f2777a
+#define base09 #f99157
+#define base0A #ffcc66
+#define base0B #99cc99
+#define base0C #66cccc
+#define base0D #6699cc
+#define base0E #cc99cc
+#define base0F #d27b53
+
+URxvt*.foreground:   base05
+URxvt*.background:   base00
+URxvt*.cursorColor:  base05
+
+URxvt*.color0:       #000000
+URxvt*.color1:       base08
+URxvt*.color2:       base0B
+URxvt*.color3:       base0A
+URxvt*.color4:       base0D
+URxvt*.color5:       base0E
+URxvt*.color6:       base0C
+URxvt*.color7:       base05
+
+URxvt*.color8:       base03
+URxvt*.color9:       base08
+URxvt*.color10:      base0B
+URxvt*.color11:      base0A
+URxvt*.color12:      base0D
+URxvt*.color13:      base0E
+URxvt*.color14:      base0C
+URxvt*.color15:      base07
+
+URxvt*.color16:      base09
+URxvt*.color17:      base0F
+URxvt*.color18:      base01
+URxvt*.color19:      base02
+URxvt*.color20:      base04
+URxvt*.color21:      base06
