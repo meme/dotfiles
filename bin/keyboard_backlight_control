@@ -1,0 +1,16 @@
+#!/bin/bash
+
+INTENSITY=50
+
+ARGS=($@)
+[[ ${#ARGS[@]} != 1 ]] && printf '%s' "Possible commands are: inc, dec" && exit 1;
+BRIGHTNESS_FILE=/sys/class/leds/smc\:\:kbd_backlight/brightness
+BRIGHTNESS=$(sudo cat $BRIGHTNESS_FILE)
+BRIGHTNESS_UP=$(($BRIGHTNESS + $INTENSITY))
+BRIGHTNESS_DOWN=$(($BRIGHTNESS - $INTENSITY))
+case $@ in
+ *"inc"*) [[ $BRIGHTNESS_UP -le 255 ]] && echo $BRIGHTNESS_UP | sudo tee $BRIGHTNESS_FILE &> /dev/null;;
+ *"dec"*) [[ $BRIGHTNESS_DOWN -ge 0 ]] && echo $BRIGHTNESS_DOWN | sudo tee $BRIGHTNESS_FILE &> /dev/null;;
+ *) printf 'Unknown command!' && exit 1;;
+esac
+exit 0

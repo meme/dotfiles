@@ -8,7 +8,18 @@ font pango:FuraCode Nerd Font 10
 
 floating_modifier $mod
 
-bindsym $mod+Return exec urxvt
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 3
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 3
+
+bindsym XF86KbdBrightnessUp exec --no-startup-id /home/keegan/bin/keyboard_backlight_control inc
+bindsym XF86KbdBrightnessDown exec --no-startup-id /home/keegan/bin/keyboard_backlight_control dec
+
+bindsym $mod+Shift+x exec i3lock
+
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 
