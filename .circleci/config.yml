@@ -19,8 +19,8 @@ jobs:
           mv .config ~
           mv .ghc ~
           mv .gdbinit ~
+          mv bin ~
 
           echo :q | gdb &> /dev/null
           echo :q | ghci &> /dev/null
           echo exit | fish &> /dev/null
-          echo :q | nvim &> /dev/null
