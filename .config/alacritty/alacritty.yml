@@ -10,7 +10,7 @@ window:
     x: 2
     y: 2
 
-  decorations: true
+  decorations: full
 
 tabspaces: 4
 
@@ -29,7 +29,7 @@ font:
     family: FuraCode Nerd Font
     style: Italic
 
-  size: 8.0
+  size: 10.0
 
   offset:
     x: 0
@@ -39,12 +39,9 @@ font:
     x: 0
     y: 0
 
-  scale_with_dpi: true
   use_thin_strokes: true
 
 render_timer: false
-
-custom_cursor_colors: false
 
 colors:
   primary:
@@ -88,16 +85,16 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
 
-  faux_scrollback_lines: 1
+  faux_scrolling_lines: 1
+  hide_when_typing: false
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
 dynamic_title: true
 
-hide_cursor_when_typing: false
-
-cursor_style: Block
+cursor:
+  style: Block
 
 live_config_reload: true
 
