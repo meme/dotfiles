@@ -10,7 +10,7 @@ floating_modifier $mod
 
 new_window 1pixel
 
-assign [class="Chromium"] 1 www
+assign [class="Firefox"] 1 www
 assign [class="discord"] 2 chat
 assign [class="Atom"] 3 code
 assign [class="Alacritty" instance="tmux"] 9 cmus
@@ -122,9 +122,10 @@ bar {
         status_command i3blocks
 }
 
-exec --no-startup-id i3-msg "workspace 1 www; exec chromium"
+exec --no-startup-id i3-msg "workspace 1 www; exec firefox-nightly"
 exec --no-startup-id i3-msg "workspace 2 chat; exec discord"
 exec --no-startup-id i3-msg "workspace 3 code; exec atom"
 exec --no-startup-id "gpg-agent --options ~/.gnupg/gpg-agent.conf --daemon"
 exec --no-startup-id "flameshot"
 exec --no-startup-id "jetbrains-toolbox"
+exec --no-startup-id "dunst -config ~/.config/dunstrc"

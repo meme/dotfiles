@@ -1,0 +1,15 @@
+[global]
+font = FuraCore Nerd Font 10
+
+markup = yes
+plain_text = no
+
+format = "<b>%s</b>\n%b"
+
+sort = no
+indicate_hidden = yes
+alignment = left
+ignore_newline = no
+geometry = "300x50-15+49"
+padding = 6
+horizontal_padding = 6
