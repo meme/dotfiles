@@ -1,11 +1,15 @@
-# Set neovim as default editor
-set EDITOR "nvim"
+set EDITOR "joe"
 
-# Add ~/bin to path
 set -gx PATH $HOME/bin $PATH
 
-# Set GOPATH
 set -gx GOPATH $HOME/go
 
-alias "v = nvim"
 alias "gg = gdb -q"
+
+function e
+  if [ (count $argv) -gt 0 ]
+    env TERM=xterm $EDITOR $argv
+  else
+    env TERM=xterm $EDITOR (fzf)
+  end
+end
