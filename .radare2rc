@@ -1,0 +1,12 @@
+e asm.syntax = intel
+e asm.pseudo = true
+e asm.flags = true
+e asm.bytes = 0
+
+# e anal.hasnext = true
+# e emu.str = 1
+
+e cmd.stack = true
+
+e scr.utf8 = true
+ec prompt red

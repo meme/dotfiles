@@ -1,0 +1,11 @@
+directory: ~/music
+library: ~/.music.db
+plugins: fromfilename chroma
+import:
+        copy: yes
+        write: yes
+
+threaded: yes
+paths:
+    default: $albumartist/$album/$track %title{$title}
+    singleton: $albumartist/$album/$track %title{$title}
