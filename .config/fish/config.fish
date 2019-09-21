@@ -1,10 +1,13 @@
-set EDITOR "joe"
+set EDITOR "nvim"
 
 set -gx PATH $HOME/bin $PATH
 
 set -gx GOPATH $HOME/go
 
 alias "gg = gdb -q"
+
+set -gx FZF_DEFAULT_OPTS "--height=25% --inline-info"
+set -gx FZF_DEFAULT_COMMAND "ag -l --nocolor --hidden"
 
 function ida
     ~/.wine/drive_c/Program\ Files/IDA\ 7.0/ida.exe $argv > /dev/null 2>&1 & disown
