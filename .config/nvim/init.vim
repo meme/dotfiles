@@ -18,6 +18,13 @@ Plug 'majutsushi/tagbar'
 Plug 'sebastianmarkow/deoplete-rust'
 Plug 'rust-lang/rust.vim'
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+
+Plug 'ziglang/zig.vim'
+
+Plug 'liuchengxu/space-vim-theme'
+
 call plug#end()
 
 filetype plugin indent on
@@ -29,6 +36,8 @@ syntax on
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+let g:python3_host_prog = 'python3.7'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -44,6 +53,10 @@ let g:deoplete#sources#rust#racer_binary = '/home/keegan/.cargo/bin/racer'
 let g:deoplete#sources#rust#rust_source_path = '/home/keegan/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 call deoplete#custom#option('max_list', 25)
 set completeopt-=preview
+
+let g:zig_fmt_autosave = 0
+
+colorscheme space_vim_theme
 
 highlight LineNr ctermfg=yellow
 highlight CursorLineNr ctermfg=3
