@@ -1,20 +1,18 @@
 set EDITOR "nvim"
 
-set -gx PATH $HOME/bin $PATH
-
-set -gx GOPATH $HOME/go
-
 alias "gg = gdb -q"
+alias "pbcopy = xsel --clipboard --input"
+alias "pbpaste = xsel --clipboard --output"
 
 set -gx FZF_DEFAULT_OPTS "--height=25% --inline-info"
 set -gx FZF_DEFAULT_COMMAND "ag -l --nocolor --hidden"
 
 function ida
-    ~/.wine/drive_c/Program\ Files/IDA\ 7.0/ida.exe $argv > /dev/null 2>&1 & disown
+    /opt/idapro-7.3/ida $argv > /dev/null 2>&1 & disown
 end
 
 function ida64
-    ~/.wine/drive_c/Program\ Files/IDA\ 7.0/ida64.exe $argv > /dev/null 2>&1 & disown
+   /opt/idapro-7.3/ida64 $argv > /dev/null 2>&1 & disown
 end
 
 function bn
@@ -28,3 +26,9 @@ function e
     env TERM=xterm $EDITOR (fzf)
   end
 end
+
+set -gx PATH $HOME/bin $PATH
+
+set -gx GOPATH $HOME/go
+
+set -gx GPG_TTY (tty)
