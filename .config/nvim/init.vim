@@ -3,63 +3,31 @@ filetype off
 set shell=bash
 
 call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'vim-syntastic/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'majutsushi/tagbar'
-
-Plug 'sebastianmarkow/deoplete-rust'
-Plug 'rust-lang/rust.vim'
-
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
-
-Plug 'ziglang/zig.vim'
-
-Plug 'liuchengxu/space-vim-theme'
-
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 filetype plugin indent on
 
 set laststatus=2
+
 set t_Co=256
+set termguicolors
+let base16colorspace=256
 
 syntax on
+set hidden
 
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:python3_host_prog = 'python3'
 
-let g:python3_host_prog = 'python3.7'
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#rust#racer_binary = '/home/keegan/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path = '/home/keegan/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
-call deoplete#custom#option('max_list', 25)
-set completeopt-=preview
-
-let g:zig_fmt_autosave = 0
-
-colorscheme space_vim_theme
-
-highlight LineNr ctermfg=yellow
-highlight CursorLineNr ctermfg=3
+colorscheme base16-gruvbox-dark-hard
+highlight Comment cterm=italic gui=italic
 
 set ruler
 set cc=80
@@ -83,11 +51,17 @@ nnoremap <Leader>b :TagbarToggle<cr>
 nnoremap <Leader>f :RustFmt<cr>
 
 nnoremap <c-p> :GFiles<cr>
+" nnoremap <c-p> :Files<cr>
 
 nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 set ignorecase
 set smartcase
@@ -104,3 +78,5 @@ set nowb
 set noswapfile
 
 set number relativenumber
+
+au FileType gitcommit setlocal tw=72
