@@ -1,0 +1,13 @@
+{
+	"python" : 
+	{
+		"interpreter" : "/usr/lib/libpython3.8.so"
+	},
+	"ui" : 
+	{
+		"debugMode" : true,
+		"font.name" : "agave Nerd Font Mono",
+		"font.size" : 11,
+		"theme" : "35c3"
+	}
+}
